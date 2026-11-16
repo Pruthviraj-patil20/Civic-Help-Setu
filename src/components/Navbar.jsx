@@ -175,6 +175,14 @@ if (normalizedTarget === '/water-quality') {
         );
       }
 
+      if (normalizedTarget === '/pedestrian-barrier-map') {
+        return (
+          normalizedPath === '/pedestrian-barrier-map' ||
+          normalizedPath === '/accessible-routes' ||
+          normalizedPath.startsWith('/pedestrian-barrier-map/')
+        );
+      }
+
       if (normalizedTarget === '/provenance') {
         return (
           normalizedPath === '/provenance' ||
@@ -922,6 +930,12 @@ if (normalizedTarget === '/water-quality') {
                 label: 'Senior Citizen Tribunal',
                 icon: Scale
               })}
+
+              {renderNavLink({
+                to: '/rera-dispute-workspace',
+                label: 'RERA Homebuyer Rights',
+                icon: Building2
+              })}
               {renderNavLink({
                 to: '/tenants',
                 label: 'Authority Workspaces',
@@ -963,6 +977,12 @@ if (normalizedTarget === '/water-quality') {
                 to: '/road-safety',
                 label: t('nav.roadSafety', 'Road Safety Blackspots'),
                 icon: AlertTriangle
+              })}
+
+              {renderNavLink({
+                to: '/pedestrian-barrier-map',
+                label: t('nav.pedestrianBarriers', 'Pedestrian Barrier Map'),
+                icon: Navigation
               })}
 
               {renderNavLink({
