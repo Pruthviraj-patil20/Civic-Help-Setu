@@ -27,9 +27,10 @@ import {
   KeyRound,
   Store,
   Building2,
+  Trees,
+  Lightbulb,
   ShieldAlert,
   GitFork,
-  Trees,
   Scale,
   BarChart2,
 } from 'lucide-react';
@@ -146,6 +147,15 @@ if (normalizedTarget === '/continuity-planner') {
           normalizedPath === '/ward-budget' ||
           normalizedPath === '/services/ward-budget-proposal' ||
           normalizedPath.startsWith('/ward-budget/')
+        );
+      }
+
+if (normalizedTarget === '/water-quality') {
+        return (
+          normalizedPath === '/water-quality' ||
+          normalizedPath === '/water-quality-register' ||
+          normalizedPath === '/services/water-quality-register' ||
+          normalizedPath.startsWith('/water-quality/')
         );
       }
 
@@ -835,6 +845,12 @@ if (normalizedTarget === '/continuity-planner') {
               })}
 
               {renderNavLink({
+                to: '/water-quality',
+                label: 'Water Quality Register',
+                icon: Droplets
+              })}
+
+              {renderNavLink({
                 to: '/pds-shops',
                 label: 'Fair Price Shops (PDS)',
                 icon: Store
@@ -954,6 +970,13 @@ if (normalizedTarget === '/continuity-planner') {
                 activeTarget: '/tree-health',
                 label: t('nav.treeHealth', 'Tree Health Inventory'),
                 icon: Trees
+              })}
+
+              {renderNavLink({
+                to: '/streetlights',
+                activeTarget: '/streetlights',
+                label: t('nav.streetlights', 'Streetlight Outages'),
+                icon: Lightbulb
               })}
 
               {renderNavLink({
