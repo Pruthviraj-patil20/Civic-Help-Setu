@@ -15,6 +15,7 @@ import {
   SEED_WORK_ORDERS,
   SEED_REPAIR_EVENTS,
 } from '../data/streetlightSeedData';
+import { logDiagnostic } from '../utils/diagnostics';
 
 // In-memory fallback if localStorage is disabled or running in test runner
 const memoryStorage = new Map();
@@ -147,7 +148,7 @@ export const ensureStreetlightData = () => {
         indexes: buildStreetlightIndexes({ assets, reports, clusters, workOrders }),
       };
     } catch (err) {
-      console.warn('Corrupt streetlight storage, re-seeding...', err);
+      logDiagnostic('Corrupt streetlight storage, re-seeding...', err);
     }
   }
 
